@@ -1,0 +1,386 @@
+<style>
+html{
+    zoom:0% !important;
+}
+
+@media only screen and (max-width: 600px){
+    #root {
+        margin: -170px 10px 0px auto;      /* auto 10px 0px auto; */
+        /*border: #410d68 4px solid;*/
+        border-radius: 8px;
+        /*rohan*/
+        /*height: 85vh;*/
+        width: 100%;
+         /*overflow:auto;*/
+    }
+    #root form{
+       padding:20px 10px 10px;
+       
+    }
+}
+@media only screen and (min-width: 601px){
+    #root {
+        margin: 0px 10px 0px auto;   /* auto 10px 0px auto; */
+        /*border: #410d68 4px solid;*/
+        border-radius: 8px;
+        height: 90%;
+        width: 75%;
+    }
+    
+    #root form{
+       padding:31px 35px 90px
+        
+    }
+    .line {
+        margin: 48px 0 80px 0 !important;  /* auto 0 80px 0 */
+    }
+}
+
+ #root .lognam{
+        font-family: Noto Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 30px;
+        color: #410d68;
+        margin-bottom: 20px;
+    }
+    #root .botmtxt{
+        font-style: normal;
+        font-family: 'Noto Sans';
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21.79px;
+        color: #000000;
+        display:inline-block;;
+        padding-top:5px;
+        padding-bottom: 5px; /*added by bhargavi */
+    }
+
+.ht:focus, .ht:hover {
+ color:#fff !important;   
+}
+.container {
+    right: 0;
+    width: 97%;
+    top: 0;
+    /* position: sticky; */
+    bottom: 0px;
+    left: 0;
+    
+}
+
+</style>
+<link rel="stylesheet" href="<?php echo $wo['config']['site_url'] ?>/htmlview/style-index.css">
+
+<?php echo Wo_LoadPage('welcome/welHeader');?>
+<style>
+    #root form{
+        background:#fff;
+        border-radius:8px;
+    }
+    .nl input{
+        padding:10px !important;
+        height:41px !important;
+    }
+    .nl a{
+        float:right;
+        text-decoration:underline;
+        /*padding-top:6px;*/
+    }
+    .field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -28px;
+  position: relative;
+  z-index: 2;
+}
+/* bhargavi */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 27px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #410D68;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider:after
+{
+ content:'OFF';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 70%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'ON';
+  color: white;
+  display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 30%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+input:checked + .pp:after {
+     content:'ON';
+     color: black;
+}
+.swtch input[type="checkbox"]:checked + .switch2{
+    content:'ON';
+     color: black; 
+}
+
+.switch input[type="checkbox"] + .switch2
+{
+  content:'OFF';
+   color: black;
+}
+
+.nb{
+    margin-bottom: 0px !important;
+}
+/* bhargavi */   
+</style>
+<div class="content-wrapper">
+        <div class="grid-container">
+            <div class="big-text-container">
+                <div class="vert-line-container"></div>
+                <div class="belong-container">Belong.</div>
+                <div class="excel-container">Excel.</div>
+                <div class="empower-container">Empower.</div>
+            </div>
+            <div class="animation-container">
+                <lottie-player class="lottie" src="htmlview/animations/18365-animaton-for-e-learning-web-site.json"
+                    background="transparent" loop autoplay></lottie-player>
+            </div>
+            <div class="social-share-container"></div>
+            <div class="bees-at-work-container">
+                <!--arjun-->
+                <div style="color: #410d68;text-align:right;" class="row1">Hivedin is a professional network for <span style="color: #410d68;">educators</span>
+                    where learning never stops.</div>
+                <!--<div class="row2">Bees at work! Coming soon...</div>-->
+            </div>
+    
+            <div class="form-container" id="form-teachers-day">
+                
+                <div id="root" style="" >
+                    <div class="sun_welcome_heading login_signup_combo">
+				   <!-- <button class="loginbtn login-top" ></button>-->
+				    <a class="loginbtn signup-top" style="margin-right:5px"  href="#">LOG IN</a>
+				    <?php if ($wo['config']['user_registration'] == 1): ?>
+				     <a class="loginbtn  login-top" style="text-align:center"  href="<?php echo Wo_SeoLink('index.php?link1=register');?>">SIGN UP</a>
+				    <?php endif ?>
+					<!--<h1><?php //echo $wo['lang']['welcome_']?> :)</h1>-->
+					<!--<p><?php //echo $wo['lang']['welcome_share_text']?></p>-->
+				</div>
+                <form id="login" method="post" >
+				    <div class="lognam">Log In</div>
+					<div class="errors"></div>
+					<div class="loading_cont">
+						<div class="loading hidden"></div>
+					</div>
+					<div class="sun_input_">
+						<div class="sun_input nl">
+						    	<span class="botmtxt"><?php echo $wo['lang']['username']?></span>
+							<input name="username" id="username" type="text" placeholder="<?php echo $wo['lang']['username']?>" value="<?php if(isset($_COOKIE['username'])) { echo $_COOKIE['username']; } ?>" autofocus />
+							<!--<label for="username"><?php //echo $wo['lang']['username']?></label>-->
+						<!--	<span class="botmtxt"><?php// echo $wo['lang']['username']?></span> by bhargavi-->
+							<!--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>-->
+						</div>
+						<div class="sun_input nl">
+						    	<span class="botmtxt"><?php echo $wo['lang']['password']?></span>
+							<input name="password" id="password" type="password" placeholder="<?php echo $wo['lang']['password']?>" value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>"/>
+							<span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+							<!--<label for="password"><?php //echo $wo['lang']['password']?></label>-->
+						<!--	<span class="botmtxt"><?php echo $wo['lang']['password']?></span>-->
+							<!--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>-->
+							
+							<a href="<?php echo Wo_SeoLink('index.php?link1=forgot-password');?>"><?php echo $wo['lang']['forget_password']?></a>
+						</div>
+						<div class="sun_input nl nb" >
+						    	<span class="botmtxt">Remember me</span>
+						    </div>
+						  
+							<label class="switch"> <input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE['password'])) {?> checked <?php } ?>><div class="slider round"></div><label style="margin-left:60px" class="switch2"></label></label>
+						
+						
+					</div>
+				<!--	<div class="forgot_password">
+						<a href="<?php echo Wo_SeoLink('index.php?link1=forgot-password');?>"><?php echo $wo['lang']['forget_password']?></a>
+					</div>-->
+					<div class="login_signup_combo pull-right">
+						<div class="login__">
+							<button type="submit" class="btn  sign-up"><?php //echo $wo['lang']['login']?>Login</button>
+						</div>
+						<!--<div class="signup__">
+							<?php if ($wo['config']['user_registration'] == 1): ?>
+								<a class="dec btn btn-default" href="<?php echo Wo_SeoLink('index.php?link1=register');?>"><?php echo $wo['lang']['register']?></a>
+							<?php endif ?>
+						</div>-->
+					</div>
+					<?php if(!empty( $_GET['last_url'])){?>
+						<div class="form-group"><input type="hidden" name="last_url" value="<?php echo urldecode(Wo_Secure($_GET['last_url']));?>"></div>
+					<?php } ?>
+				</form>
+				</div>
+                <div class="line"></div>
+            </div>
+            <div class="hex-bg-container">
+                <img src="htmlview/images/hex-bg-2.svg" alt="">
+            </div>
+            <div class="item-2-3"></div>
+            <div class="item-2-4"></div>
+
+            <div class="item-3-1"></div>
+            <div class="item-3-2"></div>
+            <div class="item-3-3"></div>
+            <div class="item-3-4"></div>
+
+            <div class="item-4-1"></div>
+            <div class="item-4-2"></div>
+            <div class="item-4-3"></div>
+            <div class="item-4-4"></div>
+        </div>
+
+
+    </div>
+    <!-- style="margin-top:-130px; " -->
+
+<div class="container" ><?php echo Wo_LoadPage('footer/welcome_register');?></div>  
+<!--<script type="text/javascript" src="<?php echo $wo['config']['site_url'] ?>/themes/sunshine/javascript/welcome.js?version=3.0.4"></script>-->
+<!--<script type="text/javascript" src="<?php echo $wo['config']['site_url'] ?>/themes/sunshine/javascript/script.js?version=3.0.4"></script>-->
+<script>
+var working = false;
+var $this = $('#login');
+var $state = $this.find('.errors');
+<?php if($wo['config']['googleLogin'] != 0): ?>
+function signOut() {
+	var auth2 = gapi.auth2.getAuthInstance();
+	auth2.signOut().then(function () {
+	  console.log('User signed out.');
+	});
+}
+
+function onSignIn(googleUser) {
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    $.post(Wo_Ajax_Requests_File() + '?f=google_login', {id_token: id_token}, function(data, textStatus, xhr) {
+    	if (data.status == 200) {
+    		signOut();
+    		$state.addClass('success');
+	        $state.html('<?php echo $wo['lang']['welcome_back'] ?>');
+			$this.find('.loading').addClass('hidden');
+	        setTimeout(function () {
+	        	window.location.href = data.location;
+	        }, 1000);
+    	}
+    	else{
+			$this.find('button').attr("disabled", false);
+			$this.find('.loading').addClass('hidden');
+	        $state.html(data.message);
+    	}
+    });
+}
+<?php endif; ?>
+$(function() {
+  $('#login').ajaxForm({
+    url: Wo_Ajax_Requests_File() + '?f=login',
+    beforeSend: function() {
+		working = true;
+		$this.find('button').attr("disabled", true);
+		$this.find('.loading').removeClass('hidden');
+    },
+    success: function(data) {
+        console.log(data);
+      if (data.status == 200 || data.status == 600) {
+      	$state.addClass('success');
+        $state.html('<?php echo $wo['lang']['welcome_back'] ?>');
+		$this.find('.loading').addClass('hidden');
+        setTimeout(function () {
+        	//window.location.href = data.location;
+        	window.location.href = data.learn;
+        }, 1000);
+      } else {
+        var errors = data.errors.join("<br>");
+		$this.find('button').attr("disabled", false);
+		$this.find('.loading').addClass('hidden');
+        $state.html(errors);
+      } 
+      working = false;
+    }
+  });
+});
+</script>
+    <script>
+        $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+    </script>
+    

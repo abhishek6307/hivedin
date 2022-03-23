@@ -1119,7 +1119,7 @@ section.course-header-area {
       <?php if ($course_details['is_free_course'] == 1): ?>
           <div class="buy-btns">
             <?php if ($this->session->userdata('user_login') != 1): ?>
-              <a href = "#" class="btn btn-buy-now" onclick="handleMessageButton()"><?php echo site_phrase('message'); ?></a>
+              <a class="btn btn-buy-now" data-toggle="modal" data-target="#ShouldLogin"><?php echo site_phrase('connect'); ?></a>
             <?php else: ?>
                 <div class="already_purchased">
                    <a data-toggle="modal" data-target="#MsgOwnr"><?php echo site_phrase('connect'); ?></a>
@@ -2167,7 +2167,7 @@ $multiple_img = json_decode($course_details['multiple_img']);
       <?php if ($course_details['is_free_course'] == 1): ?>
           <div class="buy-btns">
             <?php if ($this->session->userdata('user_login') != 1): ?>
-              <a href = "#" class="btn btn-buy-now" onclick="handleMessageButton()"><?php echo site_phrase('message'); ?></a>
+              <a class="btn btn-buy-now" data-toggle="modal" data-target="#ShouldLogin">Message</a>
             <?php else: ?>
                 <div class="already_purchased">
                    <a data-toggle="modal" data-target="#MsgOwnr"><?php echo site_phrase('connect'); ?></a>
@@ -2350,6 +2350,27 @@ $multiple_img = json_decode($course_details['multiple_img']);
 <!--</section>-->     
     
     <?php endif; ?>
+    /* shouldlogin Modal */
+    <div class="modal fade in "  id="ShouldLogin" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" style="width:100%;" role="document">
+        
+        <div style="float:left;margin:0;padding:0;" class="col-sm-4"></div>
+        <div style="float:left;margin:0;padding:0;" class="col-sm-4  modal-content course-preview-modall">
+        <div class="modal-header">
+        <h3><a href = "#" class="btn btn-buy-now" onclick="handleMessageButton()"><?php echo site_phrase('message'); ?></a></h3>
+          <button type="button" class="close" data-dismiss="modal" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+          
+         </div>
+        </div>
+       <div style="float:left;margin:0;padding:0;" class="col-sm-4"></div>
+       </div>
+     </div>
+    
  
     <!-- Modal -->
     
@@ -2386,11 +2407,11 @@ $multiple_img = json_decode($course_details['multiple_img']);
      </div>-->
       <!--message modal-->
 
-    <div class="modal fade in "  id="MsgOwnr" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog modal-lg" style="width:100%;" role="document">
+      <div class="modal fade in "  id="MsgOwnr" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" style="width:100%;" role="document">
         
         <div style="float:left;margin:0;padding:0;" class="col-sm-4"></div>
-      <div style="float:left;margin:0;padding:0;" class="col-sm-4  modal-content course-preview-modall">
+        <div style="float:left;margin:0;padding:0;" class="col-sm-4  modal-content course-preview-modall">
         <div class="modal-header">
           <h5 class="modal-title"><span><?php echo site_phrase('course_preview') ?>: </span><?php echo $course_details['title']; ?></h5>
           <button type="button" class="close" data-dismiss="modal" >
@@ -2439,8 +2460,8 @@ $multiple_img = json_decode($course_details['multiple_img']);
         </div>
        <div style="float:left;margin:0;padding:0;" class="col-sm-4"></div>
        </div>
+       
      </div>
-
     <style media="screen">
     .embed-responsive-16by9::before {
       padding-top : 0px;
@@ -2528,21 +2549,30 @@ $multiple_img = json_decode($course_details['multiple_img']);
     }
 
     function handleMessageButton() {
-     <?php 	if ($this->session->userdata('user_login')) { ?>
-      $.ajax({
-        url: '<?php echo site_url($controller.'/isLoggedIn');?>',
-        success: function(response)
-        {
-          if (!response) {
-            window.location.replace("<?php echo site_url('login'); ?>");
+      <?php 	if ($this->session->userdata('user_login')) { ?>
+        $.ajax({
+          url: '<?php echo site_url($controller.'/isLoggedIn');?>',
+          success: function(response)
+          {
+            if (!response) {
+              window.location.replace("<?php echo site_url('login'); ?>");
+            }
           }
-        }
-      });
-      
-      <?php } else { ?>
-         urlToRedirect = 'https://www.notifyx.site/hivedin10/userlogin';
-                window.location.replace(urlToRedirect);
-     <?php } ?>
+        });
+        
+        <?php } else {
+        $this->session->set_userdata('msg', 'You should login first');
+
+          ?>
+                       setTimeout(
+              function()
+              {
+                urlToRedirect = 'https://www.notifyx.site/hivedin10/userlogin';
+                  window.location.replace(urlToRedirect);
+              }, 1500);
+     
+       
+      <?php } ?>
     }
 
     function handleAddToWishlist(elem) {

@@ -1,0 +1,61 @@
+Code Replaced in Userlogin Line no : 2544
+
+from :     	urlToRedirect = 'https://www.notifyx.site/hivedin10/userlogin';
+to :       	urlToRedirect = 'https://www.notifyx.site/hivedin11/userlogin';
+to :  	urlToRedirect = 'https://www.notifyx.site/hivedin11/unusual-login';
+
+
+Added code in Userlogin Line No : 
+
+
+Added code in course_page_service.php Line No : 2387 to 2408
+    <div class="modal fade in "  id="ShouldLogin" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg" style="width:100%;" role="document">
+        
+        <div style="float:left;margin:0;padding:0;" class="col-sm-4"></div>
+        <div style="float:left;margin:0;padding:0;" class="col-sm-4  modal-content course-preview-modall">
+        <div class="modal-header">
+          <h5 class="modal-title"><span><?php echo site_phrase('course_preview') ?>: </span><?php echo $course_details['title']; ?></h5>
+          <button type="button" class="close" data-dismiss="modal" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+          
+         </div>
+        </div>
+       <div style="float:left;margin:0;padding:0;" class="col-sm-4"></div>
+       </div>
+     </div>
+
+
+Code Replaced incourse_page_service.php Line no : 2174
+from:	             <a href = "#" class="btn btn-buy-now" onclick="handleMessageButton()"><?php echo site_phrase		('message'); ?></a>
+to: 	<a class="btn btn-buy-now"  data-toggle="modal" data-target="#ShouldLogin"><?php echo site_phrase('connect'); ?></a>
+
+Code Replaced in course_page_service.php Line no : 2395
+
+from:	             <a href = "#" class="btn btn-buy-now" onclick="handleMessageButton()"><?php echo site_phrase		('message'); ?></a>
+to: 	<a class="btn btn-buy-now"  data-toggle="modal" data-target="#ShouldLogin"><?php echo site_phrase('connect'); ?></a>
+
+
+
+Code Replaced in course_page_service.php Line no : 2154
+
+from :	<button class="btn btn-add-wishlist <?php echo $this->crud_model->is_added_to_wishlist($course_details['id']."_".$course_details['mode']) ? 'active' : ''; ?>" type="button" id = "<?php echo $course_details['id']."_".$course_details['mode']; ?>" onclick="handleAddToWishlist(this)">
+                  <?php
+                    if($this->crud_model->is_added_to_wishlist($course_details['id']."_".$course_details['mode'])){
+                         echo "Bookmarked";
+                       // echo site_phrase('added_to_wishlist');
+                        
+                    }  else{
+                         echo "Bookmark";
+                       // echo site_phrase('add_to_wishlist');
+                      
+                    }
+                    ?>
+              </button>
+
+
+to :	<a class="btn btn-buy-now"  data-toggle="modal" data-target="#ShouldLogin"><?php echo site_phrase(''); ?></a>
